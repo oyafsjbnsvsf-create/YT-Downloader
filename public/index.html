@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Premium YouTube Downloader</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<main class="glass">
+  <header>
+    <h1>Premium YouTube Downloader</h1>
+    <p class="muted">Paste a YouTube link — thumbnail preview, size estimate, formats & download. Use only for content you own or have permission to download.</p>
+  </header>
+
+  <section class="input-row">
+    <input id="url" type="url" placeholder="Paste YouTube link or press Paste from clipboard" />
+    <button id="pasteBtn">Paste</button>
+    <button id="infoBtn">Get Info</button>
+  </section>
+
+  <section id="preview" class="hidden">
+    <img id="thumb" src="" alt="thumbnail" />
+    <div id="meta">
+      <h2 id="title"></h2>
+      <div class="sub">By <span id="uploader"></span> • <span id="duration"></span></div>
+      <div id="description" class="muted small"></div>
+    </div>
+  </section>
+
+  <section id="controls" class="hidden">
+    <label>Format
+      <select id="formatSelect">
+        <option value="mp4">MP4 (video)</option>
+        <option value="webm">WEBM (video)</option>
+        <option value="mp3">MP3 (audio)</option>
+        <option value="wav">WAV (audio)</option>
+      </select>
+    </label>
+
+    <label id="qualityLabel">Quality / Format ID
+      <select id="qualitySelect"><option value="">Auto (best)</option></select>
+    </label>
+
+    <div id="estimate" class="muted small">Estimated size: <span id="estSize">—</span></div>
+
+    <label>Filename
+      <input id="filename" placeholder="suggested-filename" />
+    </label>
+
+    <button id="downloadBtn">Download</button>
+    <div id="progress" class="muted small"></div>
+  </section>
+
+  <footer class="muted small">Server requires <code>yt-dlp</code> and <code>ffmpeg</code>. Respect YouTube's Terms of Service.</footer>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>
